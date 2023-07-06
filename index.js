@@ -4,8 +4,15 @@ const express=require("express")
 const app=express()
 const connect=require("./database")
 app.get("/", (req, res)=>{
-
-    res.send("connect get req done")
+    let sql='SELECT * FROM employee'
+    connect.query(sql, (err, result)=>{
+     if(err)
+     {
+        throw err
+     }
+     result.send("connect get req done")
+    })
+   
 })
 
 app.listen(3000, ()=>{
