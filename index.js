@@ -1,4 +1,3 @@
-
 const express=require("express")
 
 const app=express()
@@ -10,9 +9,8 @@ app.get("/", (req, res)=>{
      {
         throw err
      }
-     result.send("connect get req done")
+     result.send("connect get req done" , res)
     })
-   
 })
 
 app.listen(3000, ()=>{
